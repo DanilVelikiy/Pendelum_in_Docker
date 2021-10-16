@@ -7,5 +7,5 @@ RUN apt-get update && apt-get install -y --no-install-recommends curl && curl -f
 USER $NB_UID
 #копирование в создаваемый образ ноутбука с программой затухающего математического маятника
 COPY /notebook .
-#запуск jupiter lab с необходимыми параметрами
+#запуск jupiter lab с необходимыми параметрами (без указания этих парметров JupiterLab запустится но потребует пароль,токен и проче)
 CMD jupyter lab --ip=0.0.0.0 --port=8888 --no-browser --ServerApp.token='' --ServerApp.password='' --ServerApp.allow_origin='*'
